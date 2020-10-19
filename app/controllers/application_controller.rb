@@ -12,6 +12,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/registrations/signup' do
+    puts params
 
     erb :'/registrations/signup'
   end
@@ -35,6 +36,7 @@ class ApplicationController < Sinatra::Base
     if @user
       session[:user_id] = @user.id
       redirect '/users/home'
+      puts params
     end
     redirect '/sessions/login'
   end
